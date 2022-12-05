@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Dobókocka</title>
+</head>
+<body>
+    <kbd>
+        print("J� reggelt/napot/est�t/�jszakat!")
+print("K�sz�tette: N�gel Marcell")
+print()
+
+menu=int(input("K�rem adja meg mit szeretne csin�lni: 1. pozit�v �s negat�v sz�mok szort�roz�sa 2. sz�mol�g�p(alap) 3.Kaland j�t�k: "))
+
+if menu==1:
+    print("Pozit�v �s negat�v sz�mok szort�roz�sa")
+    szamok=[]
+    pozitiv=[]
+    negativ=[]
+    szam=int(input("K�rem adjon meg egy sz�mot (0-val lehet meg�ll�tani): "))
+    while szam!=0:
+        szamok.append(szam)
+        if szam>0:
+            pozitiv.append(szam)
+        else:
+            negativ.append(szam)
+        szam=int(input("K�rem adjon meg egy sz�mot: "))
+
+    print("�sszesen megadott sz�m: ",len(szamok))
+    print("A megadott sz�mok: ",szamok)
+    print("Ennyi negativ sz�m van: ",len(negativ))
+    print("A negativ sz�mok: ",negativ)
+    print("Ennyi pozitiv sz�m van: ",len(pozitiv))
+    print("A pozitiv sz�mok: ",pozitiv)
+    print("program v�ge!")
+
+elif menu==2:
+    print("sz�mol�g�p(alap)")
+    matek=int(input("K�rem adja meg mit szeretne csin�lni: 1. �sszead�s 2. kivon�s 3. szorz�s 4. oszt�s:  "))
+    if matek==1:    
+        a=int(input("K�rem adjon meg egy sz�mot: "))
+        b=int(input("K�rem adjon meg egy sz�mot: "))
+        print("A v�geredm�ny: ", a+b)
+        print("program v�ge!")
+
+    elif matek==2:    
+        a=int(input("K�rem adjon meg egy sz�mot: "))
+        b=int(input("K�rem adjon meg egy sz�mot: "))
+        print("A v�geredm�ny: ", a-b)
+        print("program v�ge!")
+
+    elif matek==3:    
+        a=int(input("K�rem adjon meg egy sz�mot: "))
+        b=int(input("K�rem adjon meg egy sz�mot: "))
+        print("A v�geredm�ny: ", a*b)
+        print("program v�ge!")
+
+    elif matek==4:    
+        a=int(input("K�rem adjon meg egy sz�mot: "))
+        b=int(input("K�rem adjon meg egy sz�mot: "))
+        print("A v�geredm�ny: ", a/b)
+        print("program v�ge!")
+
+    else:
+        print("Nincs ilyen men�pont!")
+        print("program v�ge!")
+
+elif menu==3:
+    print("Kaland j�t�k")
+    start=int(input("Hajnali 3 �ra van. Szalk�n vagy. Merre szeretn�l menni? 1:�llom�s 2:G�p�sz 3:Baross 4:Ipari 5:Esze Tam�s Gimn�zium 6:Spar 7:Tesco 8:Penny "))
+    if start==1:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==2:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==3:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==4:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==5:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==6:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==7:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    elif start==8:
+        print("Meghalt�l")
+        print("J�t�k v�ge")
+    else:
+        print("Ilyen opci� nincs, de akkor is meghalt�l")
+        print("J�t�k v�ge")
+    print("K�sz�tette: N�gel Marcell")
+    
+
+else:
+    print("Nincs ilyen men�pont!")
+    print("program v�ge!")
+
+ertekeles=int(input("K�rem �rt�kelje a dolgozatot(jegy):  "))
+if ertekeles==5:
+    print("K�sz�n�m!")
+elif ertekeles==4:
+    print("K�sz�n�m")
+elif ertekeles==3:
+    print("K�sz�n�m...")
+elif ertekeles==2:
+    print(".......")
+elif ertekeles==1:
+    print("Au")
+        
+
+
+        
+
+
+    
+
+    
+        
+   
+
+    
+    
+
+    
+
+
+    </kbd>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

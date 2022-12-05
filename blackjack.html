@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>BlackJack</title>
+</head>
+<body>
+    <kbd>
+        
+
+import random
+
+bank=500 
+
+
+kartyak=[1,2,3,4,5,6,7,8,9,10,10,10,10]
+
+en=[] 
+robot=[]
+
+
+
+print("Black Jack")
+start=int(input("Szeretne j�tszani?: 1: igen 2: nem\n"))
+if start==2:
+    print(":(")
+
+while start==1:
+
+    print("Az egyenlege: ",bank)
+    tet=int(input("K�rem adja meg a t�tet: "))
+
+
+    while len(en)<2:
+        en.append(random.choice(kartyak))
+    print("A lapjai: ", en)
+
+    while len(robot)<2:
+        robot.append(random.choice(kartyak)) 
+    print("A robot lapjai: ", robot)
+
+    huzas=int(input("1: H�z�s  2: Meg�ll�s "))
+    if huzas==1:
+        en.append(random.choice(kartyak))
+        print("A lapjai: ", en)
+        
+        if sum(en)>21:
+            print("Vesztett")
+            bank-=tet
+            print("Az egyenlege: ",bank)
+        elif sum(en)==21:
+            print("Nyert")
+            bank+=tet
+            print("Az egyenlege: ",bank)
+        else:
+            print("A robot h�z")
+            robot.append(random.choice(kartyak))
+            print("A robot lapjai: ", robot)
+            
+            if sum(en)>sum(robot) and sum(en)<=21:
+                print("nyert")
+                bank+=tet
+                print("Az egyenlege: ",bank)
+            elif sum(en)<sum(robot) and sum(robot)<=21:
+                print("vesztett")
+                bank-=tet
+                print("Az egyenlege: ",bank)
+            elif sum(robot)>21:
+                print("nyert")
+                bank+=tet
+                print("Az egyenlege: ",bank)
+            elif sum(robot)==21:
+                print("vesztett")
+                bank-=tet
+                print("Az egyenlege: ",bank)
+    else:
+        print("A robot h�z")
+        robot.append(random.choice(kartyak))
+        print("A robot lapjai: ", robot)
+        if sum(en)>sum(robot) and sum(en)<=21:
+           print("nyert")
+           bank+=tet
+           print("Az egyenlege: ",bank)
+        elif sum(en)<sum(robot) and      sum(robot)<=21:
+           print("vesztett")
+           bank-=tet
+           print("Az egyenlege: ",bank)
+        elif sum(robot)>21:
+           print("nyert")
+           bank+=tet
+           print("Az egyenlege: ",bank)
+        elif sum(robot)==21:
+           print("vesztett")
+           bank-=tet
+           print("Az egyenlege: ",bank)
+      
+    start=int(input("J�t�k v�ge! Kil�p�s:2 \n"))
+    if start==2:
+        print("K�sz�nj�k, hogy j�tszott�l")
+    
+
+    
+        
+   
+
+    
+    
+
+    
+
+
+    </kbd>
+    
+</body>
+</html>
