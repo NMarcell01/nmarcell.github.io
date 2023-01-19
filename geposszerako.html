@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>Gépösszerakó</title>
+</head>
+<body>
+
+    <py-config>
+        packages=["pprint"]
+
+    </py-config>
+
+    <py-script>
+        import pprint
+#pprint, hogy szebben lehessen kiíratni a szótárt
+
+
+
+#"adatbázis" szótár használatával
+
+alaplap={
+    "ASUS TUF GAMING B550-PLUS":{
+        "nev":"ASUS TUF GAMING B550-PLUS",
+        "socket":"AM4",
+        "ar":67450,
+        "chipset":"AMD B550",
+        "ram":"DDR4"
+
+    },
+    "BIOSTAR B450MH":{
+        "nev":"BIOSTAR B450MH",
+        "socket":"AM4",
+        "ar":25130,
+        "chipset":"AMD B450",
+        "ram":"DDR4"
+        
+        
+    },
+    "ASUS TUF GAMING B560M-PLUS":{
+        "nev":"ASUS TUF GAMING B560M-PLUS",
+        "socket":"LGA1200",
+        "ar":56369,
+        "chipset":"Intel B560",
+        "ram":"DDR4"
+        
+        
+    },
+    "GIGABYTE H410M-H V2":{
+        "nev":"GIGABYTE H410M-H V2",
+        "socket":"LGA1200",
+        "ar":31684,
+        "chipset":"Intel H470",
+        "ram":"DDR4"
+        
+        
+    }
+    
+}
+
+cpu={
+    "AMD Ryzen 5 5600X":{
+        "nev":"AMD Ryzen 5 5600X",
+        "socket":"AM4",
+        "ar":72200,
+        "core":6,
+        "thread":12,
+        "clock":"3700 MHz",
+        "tclock":"4600 MHz",
+        "tdp":65
+    },
+    "AMD A6-9500E":{
+        "nev":"AMD A6-9500E",
+        "socket":"AM4",
+        "ar":6900,
+        "core":2,
+        "thread":2,
+        "clock":"3000MHz",
+        "tclock":"3400MHz",
+        "tdp":35
+    },
+    "Intel Core i5-10400F":{
+        "nev":"Intel Core i5-10400F",
+        "socket":"LGA1200",
+        "ar":44135,
+        "core":6,
+        "thread":12,
+        "clock":"2900MHz",
+        "tclock":"4300MHz",
+        "tdp":65
+    },
+    "Intel Celeron G5905":{
+        "nev":"Intel Celeron G5905",
+        "socket":"LGA1200",
+        "ar":19590,
+        "core":2,
+        "thread":2,
+        "clock":"3500MHz",
+        "tdp":58
+    }
+
+}
+
+ram={
+    "Kingston FURY Beast 16GB (2x8GB)":{
+        "nev":"Kingston FURY Beast 16GB (2x8GB)",
+        "kap":"16GB",
+        "kisz":"2x8GB",
+        "type":"DDR4",
+        "speed":"3200MHz",  
+        "ar":27926 
+    },
+    "Silicon Power XPOWER Turbine 8GB (1x8GB)":{
+        "nev":"Silicon Power XPOWER Turbine 8GB (1x8GB)",
+        "kap":"18GB",
+        "kisz":"1x8GB",
+        "type":"DDR4",
+        "speed":"2666MHz",  
+        "ar":7990
+    }
+}
+
+gpu={
+    "ASUS GeForce Dual V2 RTX 3060 12GB OC":{
+        "nev":"ASUS GeForce Dual V2 RTX 3060 12GB OC",
+        "gmem":"12GB",
+        "tdp":170,
+        "ar":194199 
+    },
+     "PowerColor Radeon RX 6600 XT 8GB":{
+        "nev":"PowerColor Radeon RX 6600 XT 8GB",
+        "gmem":"8GB",
+        "tdp":160,
+        "ar":139476 
+    }
+}
+
+psu={
+    "Cooler Master V750 GOLD V2":{
+        "nev":"Cooler Master V750 GOLD V2",
+        "telj":750,
+        "hatasfok":"80+ Gold",
+        "ar":45970
+    },
+    "Cooler Master Elite V3":{
+        "nev":"Cooler Master Elite V3",
+        "telj":600,
+        "hatasfok":"80",
+        "ar":21654 
+    }
+}
+
+print("Gépösszerakó \nKészítette: Nágel Marcell és Mészáros László\n")
+
+
+
+
+#adatok bekérése a felhasználótol, "konfigg" szótár létrehozása,"konfigg" szótárba tároljuk a felhasználótol bekért adatokat
+
+#ki kell jelölni az egérrel a kívánt processzor teljes nevét, aztán jobb klikk és megint jobb klikk a beillesztéshez
+
+konfigg={
+    
+
+}
+
+pprint.pprint(cpu)
+
+processor=str(input("\nKérem válasszon processzort(másolja ki a nevét): \n" ))
+
+if processor=="AMD Ryzen 5 5600X":
+    konfigg["cpu1"]=cpu["AMD Ryzen 5 5600X"]
+    print("Hozzáadva!\n")
+
+elif processor=="AMD A6-9500E":
+    konfigg["cpu1"]=cpu["AMD A6-9500E"]
+    print("Hozzáadva!\n")
+
+elif processor=="Intel Core i5-10400F":
+    konfigg["cpu1"]=cpu["Intel Core i5-10400F"]
+    print("Hozzáadva!\n")
+
+elif processor=="Intel Celeron G5905":
+    konfigg["cpu1"]=cpu["Intel Celeron G5905"]
+    print("Hozzáadva!\n")
+
+else:
+    print("Kérem a listából válasszon és pontosan ugyanúgy írja be ahogy a listában látható(Most a program kilép!)!")
+    exit()
+
+
+pprint.pprint(alaplap)
+motherboard=str(input("\nKérem válasszon alaplapot(másolja ki a nevét): \n"))
+if motherboard=="ASUS TUF GAMING B550-PLUS":
+    konfigg["mobo"]=alaplap["ASUS TUF GAMING B550-PLUS"]
+    print("Hozzáadva!\n")
+
+elif motherboard=="BIOSTAR B450MH":
+    konfigg["mobo"]=alaplap["BIOSTAR B450MH"]
+    print("Hozzáadva!\n")
+
+elif motherboard=="ASUS TUF GAMING B560M-PLUS":
+    konfigg["mobo"]=alaplap["ASUS TUF GAMING B560M-PLUS"]
+    print("Hozzáadva!\n")
+
+elif motherboard=="GIGABYTE H410M-H V2":
+    konfigg["mobo"]=alaplap["GIGABYTE H410M-H V2"]
+    print("Hozzáadva!\n")
+
+else:
+    print("Kérem a listából válasszon és pontosan ugyanúgy írja be ahogy a listában látható(Most a program kilép!)!")
+    exit()
+
+pprint.pprint(ram)
+memoria=str(input("\nKérem válasszon RAM-ot(másolja ki a nevét): \n"))
+if memoria=="Kingston FURY Beast 16GB (2x8GB)":
+    konfigg["mem"]=ram["Kingston FURY Beast 16GB (2x8GB)"]
+    print("Hozzáadva!\n")
+
+elif memoria=="Silicon Power XPOWER Turbine 8GB (1x8GB)":
+    konfigg["mem"]=ram["Silicon Power XPOWER Turbine 8GB (1x8GB)"]
+    print("Hozzáadva!\n")
+
+else:
+    print("Kérem a listából válasszon és pontosan ugyanúgy írja be ahogy a listában látható(Most a program kilép!)!")
+    exit()
+
+pprint.pprint(gpu)
+vga=str(input("\nKérem válasszon videókártyát(másolja ki a nevét): \n"))
+if vga=="ASUS GeForce Dual V2 RTX 3060 12GB OC":
+    konfigg["vidi"]=gpu["ASUS GeForce Dual V2 RTX 3060 12GB OC"]
+    print("Hozzáadva!\n")
+
+elif vga=="PowerColor Radeon RX 6600 XT 8GB":
+    konfigg["vidi"]=gpu["PowerColor Radeon RX 6600 XT 8GB"]
+    print("Hozzáadva!\n")
+
+else:
+    print("Kérem a listából válasszon és pontosan ugyanúgy írja be ahogy a listában látható(Most a program kilép!)!")
+
+pprint.pprint(psu)
+tap=str(input("\nKérem válasszon tápegységet(másolja ki a nevét): \n"))
+if tap=="Cooler Master V750 GOLD V2":
+    konfigg["tapi"]=psu["Cooler Master V750 GOLD V2"]
+    print("Hozzáadva!\n")
+
+elif tap=="Cooler Master Elite V3":
+    konfigg["tapi"]=psu["Cooler Master Elite V3"]
+    print("Hozzáadva!\n")
+
+else:
+    print("Kérem a listából válasszon és pontosan ugyanúgy írja be ahogy a listában látható(Most a program kilép!)!")
+    exit()
+
+
+
+#számítások, ellenőrzések
+
+vegosszeg=konfigg["cpu1"]["ar"]+konfigg["mem"]["ar"]+konfigg["mobo"]["ar"]+konfigg["tapi"]["ar"]+konfigg["vidi"]["ar"]
+fogyasztas=konfigg["cpu1"]["tdp"]+konfigg["vidi"]["tdp"]
+
+if konfigg["cpu1"]["socket"]==konfigg["mobo"]["socket"]:
+    if konfigg["mobo"]["ram"]==konfigg["mem"]["type"]:
+        if konfigg["cpu1"]["tdp"]+konfigg["vidi"]["tdp"]<=konfigg["tapi"]["telj"]:
+            print("A konfiguráció kompatibilis! Végösszeg: ",vegosszeg, " Ft", "A számított fogyasztás: ",fogyasztas,"W"   )
+            
+        else:
+            print("A tápegység nem felel meg a hardverekhez!")
+    else:
+        print("Az alaplap és a memória(RAM) nem kompatibilis!")
+else:
+    print("A processzor és az alaplap nem kompatibilis!")
+
+
+
+print("\nProgram vége!")
+
+#Nágel Marcell & Mészáros László
+
+    </py-script>
+
+    
+</body>
+</html>
